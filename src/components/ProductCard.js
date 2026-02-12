@@ -8,7 +8,7 @@ const ProductCard = ({img , title, desc, rating , price}) => {
     switch (rating) {
       case 1:
         return (
-          <div className="flex text-yellow-500">
+          <div className="flex gap-1 text-[20px] text-[#FF9529]">
             <AiFillStar />
             <AiOutlineStar />
             <AiOutlineStar />
@@ -18,7 +18,7 @@ const ProductCard = ({img , title, desc, rating , price}) => {
         );
         case 2:
         return (
-          <div className="flex text-yellow-500">
+          <div className="flex gap-1 text-[20px] text-[#FF9529]">
             <AiFillStar />
             <AiFillStar />
             <AiOutlineStar />
@@ -28,7 +28,7 @@ const ProductCard = ({img , title, desc, rating , price}) => {
         );
       case 3:
         return (
-          <div className="flex text-yellow-500">
+          <div className="flex gap-1 text-[20px] text-[#FF9529]">
             <AiFillStar />
             <AiFillStar />
             <AiFillStar />
@@ -38,7 +38,7 @@ const ProductCard = ({img , title, desc, rating , price}) => {
         );
       case 4:
         return (
-          <div className="flex text-yellow-500">
+          <div className="flex gap-1 text-[20px] text-[#FF9529]">
             <AiFillStar />
             <AiFillStar />
             <AiFillStar />
@@ -48,7 +48,7 @@ const ProductCard = ({img , title, desc, rating , price}) => {
         );
       case 5:
         return (
-          <div className="flex text-yellow-500">
+          <div className="flex gap-1 text-[20px] text-[#FF9529]">
             <AiFillStar />
             <AiFillStar />
             <AiFillStar />
@@ -59,19 +59,19 @@ const ProductCard = ({img , title, desc, rating , price}) => {
     }
 };
   return (
-    <div>
+    <div className='px-4 rounded-xl border  border-gray-200 max-w-[400px]'>
         <div>
-            <Image src={img} width={200} height={300} alt='title'/>
+            <Image className='w-full h-auto' src={img} width={200} height={300} alt='title'/>
         </div>
 
-        <div>
-            <h2>{title}</h2>
-            <p>{desc}</p>
+        <div className='space-y-2 py-2'>
+            <h2 className='text-[var(--accent)] font-medium uppercase'>{title}</h2>
+            <p className='text-gray-500 max-w-[150px]'>{desc}</p>
             <div>{generateRating(rating)}</div>
 
-            <div>
+            <div className='font-bold flex gap-4'>
                 ${price}
-                <del>${parseInt(price) + 50}.00</del>
+                <del className='text-gray-500 font-normal'>${parseInt(price) + 50}.00</del>
             </div>
         </div>
     </div>
